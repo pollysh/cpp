@@ -79,34 +79,30 @@ void	ft_search(Phonebook *phonebook, int i)
 
 int main(void)
 {
-	std::string		user_command;
-	Phonebook		phonebook;
-	int				i;
+    std::string user_command;
+    Phonebook phonebook;
+    int current_index = 0;
+    int total_contacts = 0;
 
-	i = 0;
-	while (!std::cin.eof())
-	{
-		std::cout << "Please enter a command (SEARCH / ADD / EXIT)\n> ";
-		std::getline(std::cin, user_command);
-		if (user_command == "EXIT")
-			return (0);
-		else if (user_command == "ADD")
-		{
-			if (i >= 8)
-				std::cout << "Cannot add more than 8 contacts\n> ";
-			else
-			{
-				ft_add(&phonebook, i);
-				i++;
-			}
-		}
-		else if (user_command == "SEARCH")
-		{
-			ft_search(&phonebook, i);
-		}
-		else
-			if (!std::cin.eof())
-				std::cout << "Only ADD, SEARCH and EXIT commands are accepted\n";
-	}
-	return (0);
+    while (!std::cin.eof())
+    {
+        std::cout << "Enter SEARCH / ADD / EXIT\n> ";
+        std::getline(std::cin, user_command);
+        
+        if (user_command == "EXIT")
+            return (0);
+        else if (user_command == "ADD")
+        {
+            ft_add(&phonebook, current_index);
+            current_index = (current_index + 1) % 8; 
+            total_contacts++;
+        }
+        else if (user_command == "SEARCH")
+        {
+            ft_search(&phonebook, std::min(total_contacts, 8));
+        }
+        else if (!std::cin.eof())
+            std::cout << "The program only accepts ADD, SEARCH and EXIT.\n";
+    }
+    return (0);
 }

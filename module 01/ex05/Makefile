@@ -1,7 +1,7 @@
-NAME		=	account
+NAME		=	ex05
 
-SRC			=	tests.cpp \
-				Account.cpp \
+SRC			=	main.cpp \
+				Harl.cpp \
 
 OBJS		=	$(SRC:.cpp=.o)
 
@@ -9,9 +9,9 @@ COMPILE		=	clang++
 
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-EXE_NAME	=	-o account
+EXE_NAME	=	-o ex05
 
-EXEC		=	account
+EXEC		=	ex05
 
 all: $(NAME)
 
