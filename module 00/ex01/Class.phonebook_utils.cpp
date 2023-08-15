@@ -71,7 +71,7 @@ void	ft_search(Phonebook *phonebook, int i)
 		return ;
 	index = atoi(user_index.c_str());
 	if (index && index >=1 && index <= i)
-		(*phonebook).get_contact(stoi(user_index) - 1).ft_print();
+		(*phonebook).get_contact(atoi(user_index.c_str()) - 1).ft_print();
 	else
 		std::cout << "Wrong index" << "\n> ";
 	return ;
