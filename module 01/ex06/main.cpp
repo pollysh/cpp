@@ -1,4 +1,6 @@
 #include <iostream>
+#include <map>
+#include <string>
 #include "Harl.hpp"
 
 int main(int argc, char** argv) {
@@ -9,23 +11,18 @@ int main(int argc, char** argv) {
 
     Harl harl;
     Harl::Level chosenLevel;
-    bool validLevel = true;
+    
+    std::map<std::string, Harl::Level> levelMap;
+    levelMap["DEBUG"] = Harl::DEBUG;
+    levelMap["INFO"] = Harl::INFO;
+    levelMap["WARNING"] = Harl::WARNING;
+    levelMap["ERROR"] = Harl::ERROR;
 
-    if (argv[1] == std::string("DEBUG")) {
-        chosenLevel = Harl::DEBUG;
-    } else if (argv[1] == std::string("INFO")) {
-        chosenLevel = Harl::INFO;
-    } else if (argv[1] == std::string("WARNING")) {
-        chosenLevel = Harl::WARNING;
-    } else if (argv[1] == std::string("ERROR")) {
-        chosenLevel = Harl::ERROR;
-    } else {
-        validLevel = false;
-    }
-
-    if (!validLevel) {
+    if (levelMap.find(argv[1]) == levelMap.end()) {
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         return 0;
+    } else {
+        chosenLevel = levelMap[argv[1]];
     }
 
     switch (chosenLevel) {

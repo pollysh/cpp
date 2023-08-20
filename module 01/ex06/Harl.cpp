@@ -41,6 +41,7 @@ void Harl::complain(std::string level) {
     if (startLevelIndex == -1) return;
 
     for (int i = startLevelIndex; i < 4; i++) {
+
         if (i < currentFilterLevel) continue;
 
         std::cout << "[ " << levelNames[i] << " ]" << std::endl;
