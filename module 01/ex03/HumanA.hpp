@@ -1,21 +1,17 @@
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef HUMAN_A_HPP
+# define HUMAN_A_HPP
 
-#include "Weapon.hpp"
+# include <string>
+# include "Weapon.hpp"
 
-#include <iostream>
-#include <map>
-#include <string>
+class HumanA {
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		void attack(void);
 
-class Harl {
-private:
-    void debug(void);
-    void info(void);
-    void warning(void);
-    void error(void);
-
-public:
-    void complain(std::string level);
+	private:
+		std::string name;
+		Weapon &weapon;
 };
 
 #endif

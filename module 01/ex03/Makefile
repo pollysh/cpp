@@ -1,34 +1,29 @@
-NAME		=	ex03
+NAME	= ex03
 
-SRC			=	main.cpp \
-				HumanA.cpp \
-				HumanB.cpp \
-				Weapon.cpp \
+CC		= c++
+CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
-OBJS		=	$(SRC:.cpp=.o)
-
-COMPILE		=	clang++
-
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
-
-EXE_NAME	=	-o account
-
-EXEC		=	account
+SRC		= HumanA.cpp \
+		HumanB.cpp \
+		main.cpp \
+		Weapon.cpp
+		
+OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(COMPILE) $(FLAGS) $(OBJS) $(EXE_NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $@
+
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+	rm -f *.o
 
 fclean: clean
-	rm -rf $(EXEC)
-	
-re:	fclean all
+	rm -f $(NAME)
 
-.cpp.o:
-	${COMPILE} ${FLAGS} -c $< -o ${<:.cpp=.o}
+re: fclean all
 
-.PHONY:	all clean fclean re
+.PHONY: all re clean fclean

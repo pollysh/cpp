@@ -1,17 +1,17 @@
-NAME		=	ex05
+NAME		=	harlFilter
 
 SRC			=	main.cpp \
 				Harl.cpp \
 
 OBJS		=	$(SRC:.cpp=.o)
 
-COMPILE		=	clang++
+COMPILE		=	c++
 
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
-EXE_NAME	=	-o ex05
+EXE_NAME	=	-o harlFilter
 
-EXEC		=	ex05
+EXEC		=	harlFilter
 
 all: $(NAME)
 

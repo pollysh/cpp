@@ -1,11 +1,12 @@
 NAME	= ex01
 
-CC		= c++
+CC		= g++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
-SRC		= Zombie.cpp \
-		zombieHorde.cpp \
-		main.cpp
+SRC		= ClapTrap.cpp \
+		ScavTrap.cpp \
+		main.cpp \
+			
 OBJ		= $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -4,7 +4,7 @@ SRC			=	main.cpp \
 
 OBJS		=	$(SRC:.cpp=.o)
 
-COMPILE		=	clang++
+COMPILE		=	c++
 
 FLAGS		=	-Wall -Wextra -Werror -std=c++98
 
