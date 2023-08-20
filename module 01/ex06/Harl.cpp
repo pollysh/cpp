@@ -1,12 +1,10 @@
 #include <iostream>
 #include "Harl.hpp"
 
-Harl::Harl() : currentFilterLevel(DEBUG) {}
+Harl::Harl( void ) {
+}
 
-Harl::~Harl() {}
-
-void Harl::setFilterLevel(Level level) {
-    currentFilterLevel = level;
+Harl::~Harl( void ) {
 }
 
 void Harl::debug( void ) {
@@ -25,26 +23,14 @@ void Harl::error( void ) {
 	std::cout << "This is unacceptable ! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string level) {
-    std::string levelNames[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-    typedef void (Harl::*Complaints)(void);
-    Complaints complaints[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+void Harl::complain( std::string level ) {
+	std::string complaintLevels[4] = {"debug", "info", "warning", "error"};
+	typedef void (Harl::*Complaints)( void );
+	Complaints complaints[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-    int startLevelIndex = -1;
-    for (int i = 0; i < 4; i++) {
-        if (levelNames[i] == level) {
-            startLevelIndex = i;
-            break;
-        }
-    }
-
-    if (startLevelIndex == -1) return;
-
-    for (int i = startLevelIndex; i < 4; i++) {
-        if (i < currentFilterLevel) continue;
-
-        std::cout << "[ " << levelNames[i] << " ]" << std::endl;
-        (this->*complaints[i])();
-        std::cout << std::endl;
-    }
+	for (int i = 0; i < 4; i++) {
+		if (complaintLevels[i] == level) {
+			(this->*(complaints[i]))();
+		}
+	}
 }
