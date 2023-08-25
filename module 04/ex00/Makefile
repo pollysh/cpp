@@ -3,8 +3,12 @@ NAME	= ex00
 CC		= c++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
-SRC		= Fixed.cpp \
-			main.cpp \
+SRC		= Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
+		main.cpp \
 			
 OBJ		= $(SRC:.cpp=.o)
 

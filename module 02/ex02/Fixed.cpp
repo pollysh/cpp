@@ -105,22 +105,18 @@ Fixed Fixed::operator--(int) {
     return temp;
 }
 
-// Return reference to the smallest Fixed
 Fixed& Fixed::min(Fixed& a, Fixed& b) {
     return (a.fixed_point_value < b.fixed_point_value) ? a : b;
 }
 
-// Return reference to the smallest const Fixed
 const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
     return (a.fixed_point_value < b.fixed_point_value) ? a : b;
 }
 
-// Return reference to the greatest Fixed
 Fixed& Fixed::max(Fixed& a, Fixed& b) {
     return (a.fixed_point_value > b.fixed_point_value) ? a : b;
 }
 
-// Return reference to the greatest const Fixed
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
     return (a.fixed_point_value > b.fixed_point_value) ? a : b;
 }

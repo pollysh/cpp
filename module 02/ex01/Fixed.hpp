@@ -19,7 +19,7 @@ class Fixed {
         float toFloat(void) const;
         int toInt(void) const;
 
-        int getRawBits() const { return fixed_point_value; } // Helper function
+        int getRawBits() const { return fixed_point_value; }
 
         friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
         
