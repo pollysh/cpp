@@ -1,8 +1,18 @@
-#include "Fixed.hpp"
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/20 16:55:14 by pshevche          #+#    #+#             */
+/*   Updated: 2023/08/20 16:55:25 by pshevche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath> // for roundf
+#include <iostream>
+#include <cmath>
 
 Fixed::Fixed() : fixed_point_value(0) {
     std::cout << "Default constructor called" << std::endl;

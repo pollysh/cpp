@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/20 16:54:46 by pshevche          #+#    #+#             */
+/*   Updated: 2023/08/20 16:54:47 by pshevche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Harl.hpp"
 
@@ -41,7 +53,6 @@ void Harl::complain(std::string level) {
     if (startLevelIndex == -1) return;
 
     for (int i = startLevelIndex; i < 4; i++) {
-
         if (i < currentFilterLevel) continue;
 
         std::cout << "[ " << levelNames[i] << " ]" << std::endl;

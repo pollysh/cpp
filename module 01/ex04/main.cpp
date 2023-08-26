@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/20 16:54:42 by pshevche          #+#    #+#             */
+/*   Updated: 2023/08/20 18:05:16 by pshevche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <fstream>
 #include <string>
 
 int replace(const std::string& filename, const std::string& oldWord, const std::string& newWord, const std::string& content)
 {
-    std::ofstream outfile(filename + ".replace");
+    std::ofstream outfile((filename + ".replace").c_str());
     if (outfile.fail())
         return (1);
     

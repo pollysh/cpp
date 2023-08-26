@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/20 16:57:33 by pshevche          #+#    #+#             */
+/*   Updated: 2023/08/20 16:57:34 by pshevche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 #include <iostream>
 
@@ -20,5 +32,5 @@ int main(void)
 	Jubileus.attack("Robert");
 	Robert.takeDamage(0);
 
-	return EXIT_SUCCESS;
+	return (0);
 }
