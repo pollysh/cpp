@@ -1,10 +1,13 @@
-NAME	= ex01
+NAME	= ex00
 
 CC		= c++
 CFLAGS	= -Werror -Wextra -Wall -std=c++98
 
-SRC		= ClapTrap.cpp \
-		ScavTrap.cpp \
+SRC		= Animal.cpp \
+		Cat.cpp \
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 		main.cpp \
 			
 OBJ		= $(SRC:.cpp=.o)
