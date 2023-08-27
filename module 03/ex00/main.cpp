@@ -1,24 +1,18 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-int main(void)
-{
-	ClapTrap Jubileus("Jubileus");
-	ClapTrap Robert("Robert");
+int main() {
+    ClapTrap claptrap("RoboWarrior");
+    
+    claptrap.attack("EvilBot");
+    claptrap.takeDamage(0);
+    claptrap.beRepaired(2);
+    
+    claptrap.takeDamage(9);
+    claptrap.beRepaired(2);
+    
+    claptrap.takeDamage(10);
+    claptrap.attack("EvilBot");
 
-	Jubileus.attack("Robert");
-	Robert.takeDamage(0);
-
-	Jubileus.attack("Robert");
-	Robert.takeDamage(0);
-
-	Jubileus.attack("Robert");
-	Robert.takeDamage(0);
-
-	Robert.beRepaired(0);
-
-	Jubileus.attack("Robert");
-	Robert.takeDamage(0);
-
-	return EXIT_SUCCESS;
+    return 0;
 }

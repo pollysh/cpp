@@ -13,13 +13,13 @@ class ClapTrap {
 
     public:
         ClapTrap(const std::string &name);
-        // Getter methods
+        
         std::string getName() const;
         int getHitPoints() const;
         int getEnergyPoints() const;
         int getAttackDamage() const;
 
-        // Setter methods
+       
         void setName(const std::string &name);
         void setHitPoints(int hp);
         void setEnergyPoints(int ep);

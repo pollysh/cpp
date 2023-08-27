@@ -1,9 +1,20 @@
 #include "Animal.hpp"
 
-Animal::Animal() : type(""), brain(new Brain()) {}
+Animal::Animal() : type("") {
+     
+}
+
+Animal::Animal(const Animal& other) : type(other.type) {}
+
+Animal& Animal::operator=(const Animal& other) {
+    if(this != &other) {
+        type = other.type;
+    }
+    return *this;
+}
 
 Animal::~Animal() {
-    delete brain;
+    std::cout << "Animal destructor called." << std::endl;
 }
 
 void Animal::makeSound() const {

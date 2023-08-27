@@ -2,7 +2,6 @@
 #define WRONGANIMAL_HPP
 
 #include "Animal.hpp"
-
 #include <iostream>
 #include <string>
 
@@ -12,6 +11,8 @@ protected:
 
 public:
     WrongAnimal();
+    WrongAnimal(const WrongAnimal& original);      
+    WrongAnimal& operator=(const WrongAnimal& to_copy);
     virtual ~WrongAnimal();
 
     virtual void makeSound() const;

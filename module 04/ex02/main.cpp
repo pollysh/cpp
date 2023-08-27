@@ -1,12 +1,10 @@
-#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-
 #include <iostream>
 
 int main() {
     const int size = 10;
-    Animal* animals[size];
+    AAnimal* animals[size];
 
     for (int i = 0; i < size / 2; ++i) {
         animals[i] = new Dog();
@@ -33,8 +31,11 @@ int main() {
         delete animals[i];
     }
 
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const AAnimal* j = new Dog();
+    const AAnimal* i = new Cat();
+
+    //AAnimal anAnimal;
+    return 0;
 
     delete j;
     delete i;
