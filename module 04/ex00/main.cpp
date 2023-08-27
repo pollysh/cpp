@@ -44,12 +44,10 @@ int main() {
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongI = new WrongCat();
 
-    // Testing getType()
     std::cout << "Testing getType():" << std::endl;
     std::cout << j->getType() << std::endl; 
     std::cout << i->getType() << std::endl; 
 
-    // Testing makeSound()
     std::cout << "\nTesting makeSound():" << std::endl;
     i->makeSound();
     j->makeSound();

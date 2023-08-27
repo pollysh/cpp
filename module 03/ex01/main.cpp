@@ -19,7 +19,7 @@ int main() {
     ClapTrap clap2("C3PO");
 
     clap1.attack("C3PO");
-    clap2.takeDamage(5);
+    clap2.takeDamage(0);
     clap2.beRepaired(3);
     clap1.takeDamage(10);
     clap1.attack("C3PO");
