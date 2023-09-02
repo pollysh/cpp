@@ -10,8 +10,8 @@ protected:
 
 public:
     Animal();
-    Animal(const Animal& other);                     // Copy constructor
-    Animal& operator=(const Animal& other);           // Copy assignment operator
+    Animal(const Animal& other);                     
+    Animal& operator=(const Animal& other);      
     virtual ~Animal();
 
     virtual void makeSound() const;

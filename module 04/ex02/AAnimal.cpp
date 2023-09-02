@@ -1,11 +1,25 @@
 #include "AAnimal.hpp"
 
-AAnimal::AAnimal() : type("") {}
+AAnimal::AAnimal() : type("Unknown") {}
 
-AAnimal::~AAnimal() {
+
+AAnimal::AAnimal(const Animal& other) {
+    type = other.type;
 }
 
-void AAnimal::makeSound() const {
+
+AAnimal& AAnimal::operator=(const AAnimal& other) {
+    if (this != &other) { 
+        type = other.type;
+    }
+    return *this;
+}
+
+AAnimal::~AAnimal() {
+    std::cout << "AAnimal destructor called." << std::endl;
+}
+
+void AniAAnimalmal::makeSound() const {
     std::cout << "Generic animal sound." << std::endl;
 }
 
