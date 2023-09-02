@@ -1,23 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 16:57:43 by pshevche          #+#    #+#             */
-/*   Updated: 2023/08/20 16:57:44 by pshevche         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main() {
-    // Test ClapTrap
+
+    std::cout << "\n--- ClapTrap Testing ---" << std::endl;
+    
     ClapTrap clap1("R2D2");
     ClapTrap clap2("C3PO");
-
+    
     clap1.attack("C3PO");
     clap2.takeDamage(0);
     clap2.beRepaired(3);
@@ -25,8 +15,9 @@ int main() {
     clap1.attack("C3PO");
     clap2.takeDamage(10);
     clap2.beRepaired(5);
+    
+    std::cout << "\n--- ScavTrap Testing ---" << std::endl;
 
-    // Test ScavTrap
     ScavTrap scav("WALL-E");
     scav.attack("EVE");
     scav.guardGate();

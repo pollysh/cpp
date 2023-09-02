@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 16:57:27 by pshevche          #+#    #+#             */
-/*   Updated: 2023/08/20 16:57:28 by pshevche         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClapTrap.hpp"
 #include <iostream>
 
@@ -18,14 +6,28 @@ ClapTrap::ClapTrap(const std::string &name)
     std::cout << "ClapTrap named " << Name << " has been created!" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &other) 
+    : Name(other.Name), HitPoints(other.HitPoints), EnergyPoints(other.EnergyPoints), AttackDamage(other.AttackDamage) {
+    std::cout << "ClapTrap named " << Name << " has been created by copying!" << std::endl;
+}
+
 ClapTrap::~ClapTrap() {
     std::cout << "ClapTrap named " << Name << " has been destroyed!" << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
+    if(this != &other) { 
+        Name = other.Name;
+        HitPoints = other.HitPoints;
+        EnergyPoints = other.EnergyPoints;
+        AttackDamage = other.AttackDamage;
+    }
+    return *this;
+}
+
 void ClapTrap::attack(const std::string& target) {
     if(HitPoints > 0 && EnergyPoints > 0) {
-        std::cout << "ClapTrap " << Name << " attacks " << target 
-                  << ", causing " << AttackDamage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << Name << " attacks " << target << std::endl;
         EnergyPoints--;
     } else {
         std::cout << "ClapTrap " << Name << " has insufficient energy or hit points to attack!" << std::endl;

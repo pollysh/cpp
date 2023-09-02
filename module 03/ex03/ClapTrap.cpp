@@ -1,6 +1,15 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+ClapTrap::ClapTrap() {
+    // Default values for ClapTrap
+    Name = "Unnamed ClapTrap";
+    HitPoints = 10;  // Example value
+    EnergyPoints = 10;  // Example value
+    AttackDamage = 10;  // Example value
+    std::cout << "A default ClapTrap has been created!" << std::endl;
+}
+
 ClapTrap::ClapTrap(const std::string &name) 
     : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(0) {
     std::cout << "ClapTrap named " << Name << " has been created!" << std::endl;
@@ -27,7 +36,8 @@ ClapTrap::~ClapTrap() {
 
 void ClapTrap::attack(const std::string& target) {
     if(HitPoints > 0 && EnergyPoints > 0) {
-        std::cout << "ClapTrap " << Name << " attacks " << target  << ", causing " << AttackDamage << " points of damage!" << std::endl;
+        std::cout << "ClapTrap " << Name << " attacks " << target 
+                  << ", causing " << AttackDamage << " points of damage!" << std::endl;
         EnergyPoints--;
     } else {
         std::cout << "ClapTrap " << Name << " has insufficient energy or hit points to attack!" << std::endl;

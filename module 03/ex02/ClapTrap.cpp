@@ -1,21 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 16:57:56 by pshevche          #+#    #+#             */
-/*   Updated: 2023/08/20 16:57:57 by pshevche         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClapTrap.hpp"
 #include <iostream>
 
 ClapTrap::ClapTrap(const std::string &name) 
     : Name(name), HitPoints(10), EnergyPoints(10), AttackDamage(0) {
     std::cout << "ClapTrap named " << Name << " has been created!" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &other) 
+    : Name(other.Name), HitPoints(other.HitPoints), EnergyPoints(other.EnergyPoints), AttackDamage(other.AttackDamage) {
+    std::cout << "ClapTrap named " << Name << " has been created by copying!" << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
+    if(this != &other) { 
+        Name = other.Name;
+        HitPoints = other.HitPoints;
+        EnergyPoints = other.EnergyPoints;
+        AttackDamage = other.AttackDamage;
+    }
+    return *this;
 }
 
 ClapTrap::~ClapTrap() {

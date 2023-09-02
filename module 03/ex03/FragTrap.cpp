@@ -1,6 +1,14 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
+FragTrap::FragTrap() : ClapTrap() {
+    // Default values for FragTrap
+    HitPoints = 100;  // Example value
+    EnergyPoints = 50;  // Example value
+    AttackDamage = 20;  // Example value
+    std::cout << "A default FragTrap has been created!" << std::endl;
+}
+
 FragTrap::FragTrap(const std::string &name)
     : ClapTrap(name) 
 {

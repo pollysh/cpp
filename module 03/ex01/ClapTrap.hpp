@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pshevche <pshevche@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 16:57:41 by pshevche          #+#    #+#             */
-/*   Updated: 2023/08/20 16:57:42 by pshevche         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
@@ -25,6 +13,8 @@ class ClapTrap {
 
     public:
         ClapTrap(const std::string &name);
+        ClapTrap(const ClapTrap &other);
+        ClapTrap& operator=(const ClapTrap &other);
         
         std::string getName() const;
         int getHitPoints() const;
